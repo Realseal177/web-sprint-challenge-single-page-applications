@@ -35,6 +35,7 @@ const App = () => {
     axios.post('https://reqres.in/api/orders', newPizza)
       .then(resp => {
         setPizza([resp.data, ...pizza]);
+        console.log(resp.data);
       }).catch(err => console.error(err))
       .finally(() => setFormValues(initialFormValues))
   }
@@ -90,6 +91,7 @@ const App = () => {
             disabled={disabled}
             errors={formErrors}
           />
+
         </Route>
         <Route path='/'>
           <Home />
