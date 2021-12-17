@@ -51,6 +51,7 @@ export default function PizzaForm(props) {
                             onChange={onChange}
                             value={values.size}
                             name='size'
+                            id='size-dropdown'
                         >
                             <option value =''>Select a tarnal size!</option>
                             <option value='large'>Large</option>
@@ -116,6 +117,7 @@ export default function PizzaForm(props) {
                             onChange={onChange}
                             name='instructions'
                             type='text'
+                            id='special-text'
                         />
                     </label>
                 </div>
