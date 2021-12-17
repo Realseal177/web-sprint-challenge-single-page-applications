@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, useRouteMatch } from 'react-router-dom'
 
 export default function PizzaForm(props) {
     const {
@@ -8,6 +9,9 @@ export default function PizzaForm(props) {
         disabled,
         errors,
       } = props;
+
+      const { url } = useRouteMatch;
+      console.log(url);
 
       const onSubmit = evt => {
         evt.preventDefault()
@@ -26,8 +30,6 @@ export default function PizzaForm(props) {
         <form className='form container' id='pizza-form' onSubmit={onSubmit}>
             <div className='form-group submit'>
                 <h2>Build Your Tarnal Pizza!</h2>
-
-                <button id='order-button' disabled={disabled}>Add to order</button>
 
                 <div className='errors'>
                     <div>{errors.custName}</div>
@@ -121,6 +123,8 @@ export default function PizzaForm(props) {
                         />
                     </label>
                 </div>
+
+                <button id='order-button' disabled={disabled}>Add to order</button>
 
             </div>
         </form>

@@ -9,11 +9,14 @@ const formSchema = yup.object().shape({
     size: yup
         .string()
         .oneOf(['large', 'massive', 'insane', 'glowing-alien'], "Size doesn't usually matter but it does here. Pick a size."),
+    instructions: yup
+        .string(),
     pepperoni: yup.boolean(),
     sausage: yup.boolean(),
     olives: yup.boolean(),
     anchovies: yup.boolean(),
     cheese: yup.boolean(),
+
 })
 
 export default formSchema;
